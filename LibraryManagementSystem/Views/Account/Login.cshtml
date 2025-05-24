@@ -1,0 +1,23 @@
+﻿
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form method="post">
+            @{
+                ViewData["Title"] = "Login";
+            }
+
+            <h2>Login</h2>
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger">@ViewBag.Error</div>
+            }
+
+            <form method="post">
+                <input type="text" name="username" placeholder="Username" class="form-control mb-2" required />
+                <input type="password" name="password" placeholder="Password" class="form-control mb-2" required />
+                <button class="btn btn-primary">Login</button>
+            </form>
+        </form>
+    </div>
+</div>

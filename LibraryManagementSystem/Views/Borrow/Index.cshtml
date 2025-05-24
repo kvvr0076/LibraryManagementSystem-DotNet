@@ -1,0 +1,52 @@
+﻿@model IEnumerable<BorrowRecord>
+@{
+    ViewData["Title"] = "Borrow Records";
+    var today = (DateTime)ViewBag.Today;
+}
+
+<h2>Borrow/Return Records</h2>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+
+<a href="@Url.Action("Lend", "Borrow")" class="btn btn-primary mb-3">Lend Book</a>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Book</th>
+            <th>Member</th>
+            <th>Borrow Date</th>
+            <th>Due Date</th>
+            <th>Return Date</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var record in Model)
+        {
+            var isOverdue = record.ReturnDate == null && record.DueDate < today;
+            <tr class="@(isOverdue ? "table-danger" : "")">
+                <td>@record.Book?.Title</td>
+                <td>@record.Member?.Name</td>
+                <td>@record.BorrowDate.ToShortDateString()</td>
+                <td>@record.DueDate.ToShortDateString()</td>
+                <td>@(record.ReturnDate?.ToShortDateString() ?? "Not Returned")</td>
+                <td>
+                    @if (record.ReturnDate == null)
+                    {
+                        <form method="post" asp-action="Return" asp-route-id="@record.Id" style="display:inline;">
+                            <button class="btn btn-sm btn-success">Return</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <span class="text-muted">Returned</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

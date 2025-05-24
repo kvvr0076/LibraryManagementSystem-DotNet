@@ -1,0 +1,28 @@
+﻿
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form method="post">
+            @model User
+            @{
+                ViewData["Title"] = "Edit User";
+            }
+
+            <h2>Edit User</h2>
+
+            <form method="post">
+                <input type="hidden" asp-for="Id" />
+                <input asp-for="Name" class="form-control mb-2" placeholder="Name" required />
+                <input asp-for="Email" class="form-control mb-2" placeholder="Email" required />
+                <input asp-for="Phone" class="form-control mb-2" placeholder="Phone" required />
+                <input asp-for="Username" class="form-control mb-2" placeholder="Username" required />
+                <input asp-for="Password" class="form-control mb-2" placeholder="Password" required />
+                <select asp-for="Role" class="form-control mb-2" required>
+                    <option value="librarian" selected="@((Model.Role == "librarian"))">Librarian</option>
+                    <option value="admin" selected="@((Model.Role == "admin"))">Admin</option>
+                </select>
+                <button class="btn btn-primary">Update</button>
+                <a href="@Url.Action("Index", "User")" class="btn btn-secondary">Cancel</a>
+            </form>
+        </form>
+    </div>
+</div>

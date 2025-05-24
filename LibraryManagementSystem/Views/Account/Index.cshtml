@@ -1,0 +1,20 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Signup";
+}
+
+<h2>Signup</h2>
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+
+<form method="post">
+    <input asp-for="Name" placeholder="Name" class="form-control mb-2" required />
+    <input asp-for="Email" placeholder="Email" class="form-control mb-2" required />
+    <input asp-for="Phone" placeholder="Phone" class="form-control mb-2" required />
+    <input asp-for="Username" placeholder="Username" class="form-control mb-2" required />
+    <input asp-for="Password" placeholder="Password" class="form-control mb-2" required />
+    <button class="btn btn-success">Signup</button>
+</form>

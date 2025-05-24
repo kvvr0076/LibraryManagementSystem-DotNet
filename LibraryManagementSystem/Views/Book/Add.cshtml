@@ -1,0 +1,22 @@
+﻿
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form method="post">
+            @model Book
+            @{
+                ViewData["Title"] = "Add Book";
+            }
+
+            <h2>Add Book</h2>
+
+            <form method="post">
+                <input asp-for="Title" class="form-control mb-2" placeholder="Title" required />
+                <input asp-for="Author" class="form-control mb-2" placeholder="Author" required />
+                <input asp-for="ISBN" class="form-control mb-2" placeholder="ISBN" />
+                <input asp-for="Quantity" class="form-control mb-2" type="number" placeholder="Quantity" required />
+                <button class="btn btn-primary">Add Book</button>
+                <a href="@Url.Action("Index", "Book")" class="btn btn-secondary">Cancel</a>
+            </form>
+        </form>
+    </div>
+</div>

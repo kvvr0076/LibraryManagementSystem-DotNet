@@ -1,0 +1,27 @@
+﻿
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form method="post">
+            @model User
+            @{
+                ViewData["Title"] = "Add User";
+            }
+
+            <h2>Add User</h2>
+
+            <form method="post">
+                <input asp-for="Name" class="form-control mb-2" placeholder="Name" required />
+                <input asp-for="Email" class="form-control mb-2" placeholder="Email" required />
+                <input asp-for="Phone" class="form-control mb-2" placeholder="Phone" required />
+                <input asp-for="Username" class="form-control mb-2" placeholder="Username" required />
+                <input asp-for="Password" class="form-control mb-2" placeholder="Password" required />
+                <select asp-for="Role" class="form-control mb-2" required>
+                    <option value="librarian">Librarian</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <button class="btn btn-success">Add</button>
+                <a href="@Url.Action("Index", "User")" class="btn btn-secondary">Cancel</a>
+            </form>
+        </form>
+    </div>
+</div>
