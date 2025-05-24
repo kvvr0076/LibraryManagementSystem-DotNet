@@ -110,5 +110,5 @@ LibraryManagementSystem/
 ```
 
 ---
-Created by Vishnuvardhan Reddy Komatireddy
-Year: 2024
+- Created by Vishnuvardhan Reddy Komatireddy
+- Year: 2024
