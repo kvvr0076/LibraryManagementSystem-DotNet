@@ -54,13 +54,18 @@ A complete Library Management System built with ASP.NET Core MVC and SQL Server.
 
 ---
 
-## 👤 Default Admin
+## Default Admin Credentials
 
-Insert this manually into your database:
+- Username: admin
+- Password: admin123
+
+- Insert this manually into your database:
 
 ```sql
 INSERT INTO Users (Name, Email, Phone, Username, Password, Role)
 VALUES ('Admin User', 'admin@example.com', '9999999999', 'admin', 'admin123', 'admin');
+
+```
 
 Folder Structure
 
@@ -107,7 +112,6 @@ LibraryManagementSystem/
 ├── appsettings.json
 ├── Program.cs
 
-```
 
 ---
 - Created by Vishnuvardhan Reddy Komatireddy
