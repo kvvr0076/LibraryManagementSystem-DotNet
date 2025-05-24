@@ -65,7 +65,7 @@ A complete Library Management System built with ASP.NET Core MVC and SQL Server.
 INSERT INTO Users (Name, Email, Phone, Username, Password, Role)
 VALUES ('Admin User', 'admin@example.com', '9999999999', 'admin', 'admin123', 'admin');
 
-```
+
 
 Folder Structure
 
@@ -112,6 +112,7 @@ LibraryManagementSystem/
 ├── appsettings.json
 ├── Program.cs
 
+```
 
 ---
 - Created by Vishnuvardhan Reddy Komatireddy
