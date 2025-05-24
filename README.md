@@ -28,13 +28,13 @@ A complete Library Management System built with ASP.NET Core MVC and SQL Server.
 
 ---
 
-Notes
+📢Notes
 
--Admin can manage all users, members, books, and borrow records
--Librarians can manage books and borrow/return but not users/members
--Borrowing decreases quantity, returning increases it
--Overdue books are highlighted in red
--Everything is protected with session-based login
+- Admin can manage all users, members, books, and borrow records
+- Librarians can manage books and borrow/return but not users/members
+- Borrowing decreases quantity, returning increases it
+- Overdue books are highlighted in red
+- Everything is protected with session-based login
 
 ---
 
